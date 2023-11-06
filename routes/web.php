@@ -1,7 +1,11 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ComerController;
+use App\Http\Controllers\OpsController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +20,31 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+Route::middleware(['auth'])->group(function ()
+{
+
+    Route::middleware(['admin'])->group(function () {
+        Route::get('/admin_menu', [AdminController::class, 'index'])->name('admin.index');
+    });
+
+    Route::middleware(['comer'])->group(function () {
+        Route::get('/comer_menu', [ComerController::class, 'index'])->name('comer.index');
+    });
+
+    Route::middleware(['ops'])->group(function () {
+        Route::get('/ops_menu', [OpsController::class, 'index'])->name('ops.index');
+    });
+});
+
+
+require __DIR__.'/auth.php';
