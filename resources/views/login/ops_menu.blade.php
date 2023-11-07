@@ -4,12 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Operacional</title>
+    <title>WagerFestas - Admin</title>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="shortcut icon" href="{{ URL::asset('images/wagerlogo.png') }}" type="image/x-icon">
 </head>
 
 <body>
-    <h1>Você está logado na área do Operacional</h1>
+    <header>
+        <img src="{{ URL::asset('images/wagerlogo.png') }}" alt="Imagem de capa">
+        <ul>
+            <li><a href="/">Início</a></li>
+        </ul>
+    </header>
+    <main>
+        <div id="imgprincipal">
+            <img src="{{ URL::asset('images/wagerlogo.png') }}" alt="IMG">
+            <h1>Você está logado como Operacional!</h1>
+        </div>
+    </main>
 
-    <a href="{{ route('admin.parties') }}">Visualizar Festas</a>
+    <footer>
+        <p>Copyright © 2019-2023, Wager Festas Todos os direitos reservados.</p>
+    </footer>
 </body>
 </html>
