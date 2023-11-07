@@ -1,68 +1,71 @@
+# Setup Wager Festas
 
-# Setup Docker Laravel 10 com PHP 8.1
-[Assine a Academy, e Seja VIP!](https://academy.especializati.com.br)
+### Instalar as dependencias:
 
-### Passo a passo
-Clone Repositório
+Fazer download e instalação do docker
 ```sh
-git clone -b laravel-10-com-php-8.1 https://github.com/especializati/setup-docker-laravel.git app-laravel
-```
-```sh
-cd app-laravel
+site para download: https://docs.docker.com/get-docker/
 ```
 
+Fazer download do NodeJs
+```sh
+site para download: https://nodejs.org/en/download/current
+```
+
+Instalar o NodeJs
+```sh
+No cmd: npm install
+```
+
+Instalar o yarn
+```sh
+No cmd: npm install --global yarn
+```
+
+### Passo a passo:
+Abra o docker desktop.
+
+Clone o repositório:
+```sh
+git clone https://github.com/Ga-Jansu/WagerFestas.git
+```
 
 Crie o Arquivo .env
 ```sh
 cp .env.example .env
 ```
 
-
-Atualize as variáveis de ambiente do arquivo .env
-```dosini
-APP_NAME=EspecializaTi
-APP_URL=http://localhost:8989
-
-DB_CONNECTION=mysql
-DB_HOST=db
-DB_PORT=3306
-DB_DATABASE=nome_que_desejar_db
-DB_USERNAME=nome_usuario
-DB_PASSWORD=senha_aqui
-
-CACHE_DRIVER=redis
-QUEUE_CONNECTION=redis
-SESSION_DRIVER=redis
-
-REDIS_HOST=redis
-REDIS_PASSWORD=null
-REDIS_PORT=6379
-```
-
-
 Suba os containers do projeto
 ```sh
 docker-compose up -d
 ```
 
-
-Acesse o container app
+Acessar o container
 ```sh
 docker-compose exec app bash
 ```
 
-
-Instale as dependências do projeto
+Instalar as dependências do projeto
 ```sh
 composer install
 ```
 
-
-Gere a key do projeto Laravel
+Gerar a key do projeto Laravel
 ```sh
 php artisan key:generate
 ```
 
+após gerar a key digite: 'exit'
 
-Acesse o projeto
+Instalar as dependências do node
+```sh
+npm install
+```
+
+Rodar o node
+```sh
+npm run dev
+```
+
+Acessar o projeto
 [http://localhost:8989](http://localhost:8989)
