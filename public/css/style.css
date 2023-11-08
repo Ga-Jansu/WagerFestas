@@ -34,7 +34,7 @@ header ul {
 
 header li {
     margin-right: 50px;
-    color:#333;
+    color:#ffffff;
 }
 
 header p {
@@ -185,3 +185,10 @@ body {
     height: 100vh;
 }
 
+.bg {
+    background-image: url(../images/imgprincipal.jpg);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }

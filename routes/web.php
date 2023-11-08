@@ -23,8 +23,14 @@ Route::get('/', function () {
 
 Route::get('/registrar', function () 
 {
-    return view('/site/registrar');
+    return view('/auth/register');
 });
+
+Route::get('/logado', function () 
+{
+    return view('/auth/login');
+});
+
 
 
 Route::get('/dashboard', function () {

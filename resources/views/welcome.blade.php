@@ -14,6 +14,7 @@
         <ul>
             <li><a href="/">Início</a></li>
             <li><a href="/registrar">Registre-se</a></li>
+            <li><a href="/logar">Entrar</a></li>
         </ul>
     </header>
     <main>
