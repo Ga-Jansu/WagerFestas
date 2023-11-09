@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ComerController;
+use App\Http\Controllers\FoodController;
 use App\Http\Controllers\OpsController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -41,6 +42,11 @@ Route::middleware(['auth'])->group(function ()
 
     Route::middleware(['admin'])->group(function () {
         Route::get('/admin_menu', [AdminController::class, 'index'])->name('admin.index');
+
+
+        Route::get('/admin/comida', [FoodController::class, 'index'])->name('admin.index');
+        Route::get('/admin/comida/c', [FoodController::class, 'create'])->name('comida.create');
+        Route::post('/admin/comida/c', [FoodController::class, 'store'])->name('comida.store');
     });
 
     Route::middleware(['comer'])->group(function () {
