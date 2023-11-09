@@ -1,13 +1,15 @@
 <h1>Cardápios</h1>
 
 
-<a href="{{ route('admin.create')}}">Adicionar comidas</a>
+<a href="{{ route('comida.create')}}">Adicionar comidas</a>
 
 
 <table>
     <thead>
         <th>Titulo</th>
-        <th>conteudo</th>
+        <th>Comidas</th>
+        <th>Bebidas</th>
+        <th>Preço</th>
         <th></th>
     </thead>
     <tbody>
@@ -15,6 +17,8 @@
         <tr>
             <td>{{$food->name}}</td>
             <td>{{$food->body}}</td>
+            <td>{{$food->drink}}</td>
+            <td>{{$food->money}}</td>
         </tr>
     @endforeach
     </tbody>

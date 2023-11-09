@@ -50,11 +50,11 @@ Route::middleware(['auth'])->group(function ()
         Route::get('/admin_menu', [AdminController::class, 'index'])->name('admin.index');
 
 
-        Route::get('/admin/comida', [FoodController::class, 'index'])->name('admin.index');
+        Route::get('/admin/comida', [FoodController::class, 'index'])->name('admin.comida');
         Route::get('/admin/comida/c', [FoodController::class, 'create'])->name('comida.create');
         Route::post('/admin/comida/c', [FoodController::class, 'store'])->name('comida.store');
     });
-
+    
     Route::middleware(['comer'])->group(function () {
         Route::get('/comer_menu', [ComerController::class, 'index'])->name('comer.index');
     });

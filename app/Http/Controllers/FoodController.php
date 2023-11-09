@@ -19,8 +19,11 @@ class FoodController extends Controller
     return view('/crud/comida/create');
     }
 
-    public function store(Food $food)
+    public function store(Request $request, Food $food)
     {
-        dd($food ->all());
+        $data = $request->all();
+
+        $food->create($data);
+        return redirect()->route('admin.comida'); 
     }
 }
