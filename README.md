@@ -11,10 +11,6 @@ Fazer download do NodeJs
 ```sh
 site para download: https://nodejs.org/en/download/current
 ```
-
-Instalar o NodeJs
-```sh
-No cmd: npm install
 ```
 
 Instalar o yarn

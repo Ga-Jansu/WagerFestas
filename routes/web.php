@@ -62,7 +62,7 @@ Route::middleware(['auth'])->group(function ()
     Route::middleware(['ops'])->group(function () {
         Route::get('/ops_menu', [OpsController::class, 'index'])->name('ops.index');
     });
-});
 
+});
 
 require __DIR__.'/auth.php';
