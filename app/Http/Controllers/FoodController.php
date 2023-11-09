@@ -7,11 +7,20 @@ use Illuminate\Http\Request;
 
 class FoodController extends Controller
 {
-    public function index(food $food)
+    public function index(Food $food)
     {
         $foods = $food->all(); 
-        dd($foods); 
 
         return view('/crud/comida/index', compact('foods'));
+    }
+
+    public function create(Food $food)
+    {
+    return view('/crud/comida/create');
+    }
+
+    public function store(Food $food)
+    {
+        dd($food ->all());
     }
 }
