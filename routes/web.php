@@ -51,8 +51,13 @@ Route::middleware(['auth'])->group(function ()
 
 
         Route::get('/admin/comida', [FoodController::class, 'index'])->name('admin.comida');
+        
         Route::get('/admin/comida/c', [FoodController::class, 'create'])->name('comida.create');
         Route::post('/admin/comida/c', [FoodController::class, 'store'])->name('comida.store');
+        Route::get('/admin/comida/{id}',[FoodController::class,'show'])->name('comida.show');
+        Route::get('/admin/comida/{id}/edit',[FoodController::class,'edit'])->name('comida.edit');
+        Route::put('/admin/comida/{id}',[FoodController::class, 'update'])->name('comida.update');
+        Route::delete('/admin/comida/{id}',[FoodController::class, 'destroy'])->name('comida.destroy');
     });
     
     Route::middleware(['comer'])->group(function () {

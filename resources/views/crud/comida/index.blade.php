@@ -19,6 +19,11 @@
             <td>{{$food->body}}</td>
             <td>{{$food->drink}}</td>
             <td>{{$food->money}}</td>
+            <td>
+                <a href="{{route('comida.show', $food->id)}}">Ver</a>
+                <a href="{{route('comida.edit', $food->id)}}">Editar</a>
+    
+
         </tr>
     @endforeach
     </tbody>
