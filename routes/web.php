@@ -5,6 +5,8 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ComerController;
 use App\Http\Controllers\FoodController;
 use App\Http\Controllers\OpsController;
+use App\Http\Controllers\RecommendationController;
+use App\Models\Recommendation;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 /*
@@ -58,6 +60,15 @@ Route::middleware(['auth'])->group(function ()
         Route::get('/admin/comida/{id}/edit',[FoodController::class,'edit'])->name('comida.edit');
         Route::put('/admin/comida/{id}',[FoodController::class, 'update'])->name('comida.update');
         Route::delete('/admin/comida/{id}',[FoodController::class, 'destroy'])->name('comida.destroy');
+
+        Route::get('/admin/recomendacao' ,[RecommendationController::class, 'index'])->name('admin.recomendacao');
+        Route::get('/admin/recomendacao/c' ,[RecommendationController::class, 'create'])->name('recomendacao.create');
+        Route::post('/admin/recomendacao/c' ,[RecommendationController::class, 'store'])->name('recomendacao.store');
+        Route::get('/admin/recomendacao/{id}' ,[RecommendationController::class,'show'])->name('recomendacao.show');
+        Route::get('/admin/recomendacao/{id}/edit' ,[RecommendationController::class,'edit'])->name('recomendacao.edit');
+        Route::put('/admin/recomendacao/{id}' ,[RecommendationController::class,'update'])->name('recomendacao.update');
+        Route::delete('/admin/recomendacao/{id}' ,[RecommendationController::class,'destroy'])->name('recomendacao.destroy');
+
     });
     
     Route::middleware(['comer'])->group(function () {
