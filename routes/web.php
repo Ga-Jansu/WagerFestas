@@ -65,7 +65,7 @@ Route::middleware(['auth'])->group(function ()
         Route::get('/admin/recomendacao/c' ,[RecommendationController::class, 'create'])->name('recomendacao.create');
         Route::post('/admin/recomendacao/c' ,[RecommendationController::class, 'store'])->name('recomendacao.store');
         Route::get('/admin/recomendacao/{id}' ,[RecommendationController::class,'show'])->name('recomendacao.show');
-        Route::get('/admin/recomendacao/{id}/edit' ,[RecommendationController::class,'edit'])->name('recomendacao.edit');
+        Route::get('/admin/recomendacao/{id}/edit',[RecommendationController::class,'edit'])->name('recomendacao.edit');
         Route::put('/admin/recomendacao/{id}' ,[RecommendationController::class,'update'])->name('recomendacao.update');
         Route::delete('/admin/recomendacao/{id}' ,[RecommendationController::class,'destroy'])->name('recomendacao.destroy');
 
