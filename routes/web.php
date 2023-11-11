@@ -26,7 +26,7 @@ Route::get('/registrar', function ()
     return view('/auth/register');
 });
 
-Route::get('/logado', function () 
+Route::get('/logar', function () 
 {
     return view('/auth/login');
 });
