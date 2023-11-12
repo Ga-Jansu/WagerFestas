@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ComerController;
 use App\Http\Controllers\FoodController;
+use App\Http\Controllers\InviteController;
 use App\Http\Controllers\OpsController;
 use App\Http\Controllers\RecommendationController;
 use App\Models\Recommendation;
@@ -34,6 +35,11 @@ Route::get('/logado', function ()
     return view('/auth/login');
 });
 
+Route::get('/convidados', [InviteController::class, 'index'])->name('convidados.index');
+Route::get('/convidados/c', [InviteController::class, 'create'])->name('convidados.create');
+Route::post('/convidados/c', [InviteController::class, 'store'])->name('convidados.store');
+Route::get('/convidados/lista/{id}',[InviteController::class,'show'])->name('convidados.show');
+Route::delete('/convidados/{id}',[InviteController::class, 'destroy'])->name('convidados.destroy');
 
 
 Route::get('/dashboard', function () {
