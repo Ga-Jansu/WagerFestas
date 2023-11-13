@@ -5,6 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
+        <link rel="shortcut icon" href="{{ URL::asset('images/wagerlogo.png') }}" type="image/x-icon">
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
         <title>{{ config('app.name', 'Laravel') }}</title>
 
         <!-- Fonts -->
@@ -19,18 +22,26 @@
             @include('layouts.navigation')
 
             <!-- Page Heading -->
-            @if (isset($header))
-                <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
+            
+            <div class="font-sans text-white">
+                <header>
+                    <img src="{{ URL::asset('images/wagerlogo.png') }}" alt="Imagem de capa">
+                    <ul>
+                        <li><a href="/">Início</a></li>
+                    </ul>
                 </header>
-            @endif
+            </div>
 
+            
             <!-- Page Content -->
             <main>
                 {{ $slot }}
             </main>
         </div>
+
+        <footer>
+            <p>Copyright © 2019-2023, Wager Festas Todos os direitos reservados.</p>
+        </footer>
+
     </body>
 </html>
