@@ -2,9 +2,11 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AniverController;
 use App\Http\Controllers\ComerController;
 use App\Http\Controllers\FoodController;
 use App\Http\Controllers\InviteController;
+use App\Http\Controllers\OpenScheduleController;
 use App\Http\Controllers\OpsController;
 use App\Http\Controllers\RecommendationController;
 use App\Models\Recommendation;
@@ -75,6 +77,15 @@ Route::middleware(['auth'])->group(function ()
         Route::put('/admin/recomendacao/{id}' ,[RecommendationController::class,'update'])->name('recomendacao.update');
         Route::delete('/admin/recomendacao/{id}' ,[RecommendationController::class,'destroy'])->name('recomendacao.destroy');
 
+
+        Route::get('/admin/hoarario' ,[OpenScheduleController::class, 'index'])->name('tempo.index');
+        Route::get('/admin/hoarario/c' ,[OpenScheduleController::class, 'create'])->name('tempo.create');
+        Route::post('/admin/hoarario/c' ,[OpenScheduleController::class, 'store'])->name('tempo.store');
+        Route::get('/admin/hoarario/{id}' ,[OpenScheduleController::class,'show'])->name('tempo.show');
+        Route::get('/admin/hoarario/{id}/edit',[OpenScheduleController::class,'edit'])->name('tempo.edit');
+        Route::put('/admin/hoarario/{id}' ,[OpenScheduleController::class,'update'])->name('tempo.update');
+        Route::delete('/admin/hoarario/{id}' ,[OpenScheduleController::class,'destroy'])->name('tempo.destroy');
+
     });
     
     Route::middleware(['comer'])->group(function () {
@@ -83,6 +94,16 @@ Route::middleware(['auth'])->group(function ()
 
     Route::middleware(['ops'])->group(function () {
         Route::get('/ops_menu', [OpsController::class, 'index'])->name('ops.index');
+    });
+
+    Route::middleware(['aniver'])->group(function () {
+        Route::get('/aniver_menu', [AniverController::class, 'index'])->name('aniver.index');
+        Route::get('/aniver/a', [AniverController::class, 'create'])->name('aniver.create');
+        Route::post('/aniver/a' ,[AniverController::class, 'store'])->name('aniver.store');
+
+
+
+
     });
 
 });

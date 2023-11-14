@@ -1,6 +1,5 @@
 <?php
 
-use App\Enums\OpenSchedulesStatus;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -12,17 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('open_schedules', function (Blueprint $table) {
+        Schema::create('questions', function (Blueprint $table) {
             $table->id();
-            $table->time('time')->unique();
-            $table->integer('hours');
+            $table->string('question1');
             $table->timestamps();
-
-
-            $table->enum('status', array_column(OpenSchedulesStatus::cases(), 'name'));
         });
-
-        
     }
 
     /**
@@ -30,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('open_schedules');
+        Schema::dropIfExists('questions');
     }
 };
