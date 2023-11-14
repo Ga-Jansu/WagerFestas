@@ -1,5 +1,6 @@
 <?php
 
+use App\Enums\OpenSchedulesStatus;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -16,7 +17,12 @@ return new class extends Migration
             $table->time('time')->unique();
             $table->integer('hours');
             $table->timestamps();
+
+
+            $table->enum('status', array_column(OpenSchedulesStatus::cases(), 'name'));
         });
+
+        
     }
 
     /**
