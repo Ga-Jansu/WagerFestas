@@ -17,12 +17,15 @@
             <li><a href="/logar">Entrar</a></li>
         </ul>
     </header>
+
+    
+
     <main>
         <div id="imgprincipal">
-            <img src="{{ URL::asset('images/wagerlogo.png') }}" alt="IMG">
+            <img src="{{ URL::asset('images/wagerlogo.png') }}" alt="Imagem de capa">
         </div>
     </main>
-
+    
     <footer>
         <p>Copyright © 2019-2023, Wager Festas Todos os direitos reservados.</p>
     </footer>
