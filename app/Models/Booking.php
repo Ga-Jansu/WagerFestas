@@ -17,4 +17,9 @@ class Booking extends Model
         'price',
         'status'
     ];
+
+    public function open_schedules()
+    {
+        return $this->belongsTo(open_schedules::class, 'open_schedule_id');
+    }
 }

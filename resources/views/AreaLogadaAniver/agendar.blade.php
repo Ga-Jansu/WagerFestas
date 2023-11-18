@@ -5,8 +5,9 @@
         <input type="text" placeholder="Nome" name="name_birthdayperson">
         <input type="number" placeholder="Idade" name="years_birthdayperson">
         <input type="number" placeholder="N convidados" name="qnt_invited">
-        <input type="date" placeholder="Data" name="party_date">
-        <input type="number" placeholder="Preço" name="price">
+        <select type="data" placeholder="Data" name="party_date">
+            <option>
+                foreach()
 
     
         <button type="submit">Enviar</button>

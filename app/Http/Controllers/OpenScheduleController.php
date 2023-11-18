@@ -4,16 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Enums\OpenSchedulesStatus;
 use App\Models\Booking;
-use App\Models\Open_schedule;
+use App\Models\open_schedule;
 use Illuminate\Http\Request;
 
 class OpenScheduleController extends Controller
 {
-    public function index(Open_schedule $open_schedule)
+    public function index(open_schedule $open_schedule)
     {
-        $open_schedule = $open_schedule->all(); 
+        $open_schedules = $open_schedule->all(); 
 
-        return view('/crud/agendamento/index', compact('open_schedule'));
+        return view('/crud/agendamento/index', compact('open_schedules'));
     }
 
     public function show(string|int $id)
@@ -34,7 +34,7 @@ class OpenScheduleController extends Controller
         $data = $request->all();
 
         $open_schedule->create($data);
-        return redirect()->route('aniver.index'); 
+        return redirect()->route('tempo.index'); 
     }
     public function edit(Open_schedule $open_schedule, string|int $id)
     {
@@ -52,7 +52,7 @@ class OpenScheduleController extends Controller
         $open_schedule->update($request->only([
             'time','hours'
         ]));
-        return redirect()->route('aniver.index');
+        return redirect()->route('tempo.index');
     }
     public function destroy(string|int $id)
     {
@@ -60,6 +60,6 @@ class OpenScheduleController extends Controller
             return back();
         }
         $open_schedule->delete();
-        return redirect()->route('aniver.index');
+        return redirect()->route('tempo.index');
     }
 }

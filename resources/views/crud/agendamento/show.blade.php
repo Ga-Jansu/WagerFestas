@@ -1,14 +1,12 @@
-<h1>Detalhe do Cardapio {{$food->id}}</h1>
+<h1>Detalhe da data{{$open_schedule->id}}</h1>
 
 
 <ul>
-    <li>Titulo: {{$food->name}}</li>
-    <li>Comidas:{{$food->body}}</li>
-    <li>Bebidas:{{$food->drink}}</li>
-    <li>Preço: {{$food->money}}</li>
+    <li>Titulo: {{$open_schedule->data}}</li>
+    <li>Comidas:{{$open_schedule->hours}}</li>
 </ul>
 
-<form action="{{route('comida.destroy', $food->id)}}" method="post">
+<form action="{{route('tempo.destroy', $open_schedule->id)}}" method="post">
     @csrf 
     @method('DELETE')
     <button type="submit">Apagar</button>

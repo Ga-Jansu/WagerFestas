@@ -13,7 +13,8 @@ class AniverController extends Controller
     }
 
     public function create(Booking  $booking)
-    {       
+    {      
+        $dados = Booking::with('open_schedules')->get();        
         return view('/AreaLogadaAniver/agendar');
     }
 

@@ -18,7 +18,8 @@ return new class extends Migration
             $table->string('years_birthdayperson', 255);
             $table->integer('qnt_invited'); 
             $table->date('party_date', 0);
-            $table->foreignId('open_schedule_id')->constrained(
+            $table->foreignId('open_schedule_id')->constrained->onUpdate('cascade')
+            ->onDelete('cascade')(
                 table: 'open_schedules', indexName: 'bookings_open_schedule_id'
             );
             $table->enum('status', array_column(BookingStatus::cases(), 'name'));

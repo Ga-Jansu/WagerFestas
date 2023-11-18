@@ -14,7 +14,7 @@ return new class extends Migration
     {
         Schema::create('open_schedules', function (Blueprint $table) {
             $table->id();
-            $table->time('time')->unique();
+            $table->datetime('data')->unique();
             $table->integer('hours');
             $table->timestamps();
 

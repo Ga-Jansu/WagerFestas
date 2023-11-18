@@ -1,11 +1,9 @@
-<h1>Adicionar Horario<h1>
+<h1>Definir Horario<h1>
 
     <form action="{{route('tempo.create')}}" method="POST">
         @csrf()
-        <input type="text" placeholder="Assunto" name="name">
-        <textarea name="body" cols="30" rows="5" placeholder="Comidas"></textarea>
-        <textarea name="drink" cols="30" rows="5" placeholder="Bebidas"></textarea>
-        <input type="data" placeholder="Preço" name="money">
+        <input type="integer" placeholder="Horas" name="hours">
+        <input type="data" placeholder="Data" name="data">
     
         <button type="submit">Enviar</button>
     </form>

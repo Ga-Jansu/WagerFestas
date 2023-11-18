@@ -78,13 +78,13 @@ Route::middleware(['auth'])->group(function ()
         Route::delete('/admin/recomendacao/{id}' ,[RecommendationController::class,'destroy'])->name('recomendacao.destroy');
 
 
-        Route::get('/admin/hoarario' ,[OpenScheduleController::class, 'index'])->name('tempo.index');
-        Route::get('/admin/hoarario/c' ,[OpenScheduleController::class, 'create'])->name('tempo.create');
-        Route::post('/admin/hoarario/c' ,[OpenScheduleController::class, 'store'])->name('tempo.store');
-        Route::get('/admin/hoarario/{id}' ,[OpenScheduleController::class,'show'])->name('tempo.show');
-        Route::get('/admin/hoarario/{id}/edit',[OpenScheduleController::class,'edit'])->name('tempo.edit');
-        Route::put('/admin/hoarario/{id}' ,[OpenScheduleController::class,'update'])->name('tempo.update');
-        Route::delete('/admin/hoarario/{id}' ,[OpenScheduleController::class,'destroy'])->name('tempo.destroy');
+        Route::get('/admin/horario' ,[OpenScheduleController::class, 'index'])->name('tempo.index');
+        Route::get('/admin/horario/c' ,[OpenScheduleController::class, 'create'])->name('tempo.create');
+        Route::post('/admin/horario/c' ,[OpenScheduleController::class, 'store'])->name('tempo.store');
+        Route::get('/admin/horario/{id}' ,[OpenScheduleController::class,'show'])->name('tempo.show');
+        Route::get('/admin/horario/{id}/edit',[OpenScheduleController::class,'edit'])->name('tempo.edit');
+        Route::put('/admin/horario/{id}' ,[OpenScheduleController::class,'update'])->name('tempo.update');
+        Route::delete('/admin/horario/{id}' ,[OpenScheduleController::class,'destroy'])->name('tempo.destroy');
 
     });
     
@@ -100,10 +100,6 @@ Route::middleware(['auth'])->group(function ()
         Route::get('/aniver_menu', [AniverController::class, 'index'])->name('aniver.index');
         Route::get('/aniver/a', [AniverController::class, 'create'])->name('aniver.create');
         Route::post('/aniver/a' ,[AniverController::class, 'store'])->name('aniver.store');
-
-
-
-
     });
 
 });
