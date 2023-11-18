@@ -21,18 +21,6 @@
         <div class="min-h-screen bg-gray-100">
             @include('layouts.navigation')
 
-            <!-- Page Heading -->
-            
-            <div class="font-sans text-white">
-                <header>
-                    <img src="{{ URL::asset('images/wagerlogo.png') }}" alt="Imagem de capa">
-                    <ul>
-                        <li><a href="/">Início</a></li>
-                    </ul>
-                </header>
-            </div>
-
-            
             <!-- Page Content -->
             <main>
                 {{ $slot }}
