@@ -3,6 +3,7 @@
 namespace App\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
+use Illuminate\Support\Facades\App;
 
 class Kernel extends HttpKernel
 {
@@ -67,6 +68,5 @@ class Kernel extends HttpKernel
         'comer' => \App\Http\Middleware\ComerMiddleware::class,
         'ops' => \App\Http\Middleware\OpsMiddleware::class,
         'aniver' => \App\Http\Middleware\AniverMiddleware::class,
-
     ];
 }

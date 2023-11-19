@@ -43,21 +43,22 @@ Route::post('/convidados/c', [InviteController::class, 'store'])->name('convidad
 Route::get('/convidados/lista/{id}',[InviteController::class,'show'])->name('convidados.show');
 Route::delete('/convidados/{id}',[InviteController::class, 'destroy'])->name('convidados.destroy');
 
+Route::get('/admin_menu', [AdminController::class, 'index'])->name('admin.index')->middleware('admin');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
 
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-Route::middleware(['auth'])->group(function ()
+
+Route::middleware(['auth'])->group(function () 
 {
-
     Route::middleware(['admin'])->group(function () {
-        Route::get('/admin_menu', [AdminController::class, 'index'])->name('admin.index');
+        //Route::get('/admin_menu', [AdminController::class, 'index'])->name('admin.index');
 
 
         Route::get('/admin/comida', [FoodController::class, 'index'])->name('admin.comida');

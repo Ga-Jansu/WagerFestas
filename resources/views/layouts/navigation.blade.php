@@ -5,7 +5,6 @@
     <header>
         <img src="{{ URL::asset('images/wagerlogo.png') }}" alt="Imagem de capa">
         <ul>
-            <li><a href="/">Início</a></li>
             <li>
                 <nav x-data="{ open: false }" class="">
                 <!-- Primary Navigation Menu -->
