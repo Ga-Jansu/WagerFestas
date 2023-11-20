@@ -11,6 +11,7 @@ use App\Http\Controllers\InviteController;
 use App\Http\Controllers\OpenScheduleController;
 use App\Http\Controllers\OpsController;
 use App\Http\Controllers\RecommendationController;
+use App\Http\Controllers\SolicitationController;
 use App\Models\Recommendation;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -91,6 +92,10 @@ Route::middleware(['auth'])->group(function ()
         Route::put('/admin/horario/{id}' ,[OpenScheduleController::class,'update'])->name('tempo.update')->middleware('admin');
         Route::delete('/admin/horario/{id}' ,[OpenScheduleController::class,'destroy'])->name('tempo.destroy')->middleware('admin');
 
+        Route::get('/admin/solicitacao',[SolicitationController::class,'index'])->name('solicitacao.index')->middleware('admin');
+        Route::get('/admin/solicitacao/{id}',[SolicitationController::class,'show'])->name('solicitacao.show')->middleware('admin');
+        Route::delete('/admin/solicitacao/{id}',[SolicitationController::class,'destroy'])->name('solicitacao.destroy')->middleware('admin');
+        Route::get('/admin/solicitacao/{id}',[SolicitationController::class,'approve'])->name('solicitacao.approve')->middleware('admin');
     });
     
     Route::middleware(['comer'])->group(function () {

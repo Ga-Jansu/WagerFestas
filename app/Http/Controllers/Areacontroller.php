@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class areacontroller extends Controller
+class Areacontroller extends Controller
 {
     public function index()
     {

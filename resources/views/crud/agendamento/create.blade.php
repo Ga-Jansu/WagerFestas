@@ -2,8 +2,7 @@
 
     <form action="{{route('tempo.create')}}" method="POST">
         @csrf()
-        <input type="integer" placeholder="Horas" name="hours">
-        <input type="data" placeholder="Data" name="data">
+        <input type="datetime-local" placeholder="Data" name="data">
     
         <button type="submit">Enviar</button>
     </form>

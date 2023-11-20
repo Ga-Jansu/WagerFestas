@@ -1,9 +1,11 @@
 <?php
 
-use App\Enums\OpenSchedulesStatus;
+
+use App\Models\OpenSchedule;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+
 
 return new class extends Migration
 {
@@ -15,14 +17,10 @@ return new class extends Migration
         Schema::create('open_schedules', function (Blueprint $table) {
             $table->id();
             $table->datetime('data')->unique();
-            $table->integer('hours');
+            $table->enum('status', ['livre','ocupado'])->default('livre');
             $table->timestamps();
-
-
-            $table->enum('status', array_column(OpenSchedulesStatus::cases(), 'name'));
         });
 
-        
     }
 
     /**
