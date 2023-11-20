@@ -3,7 +3,9 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AniverController;
+use App\Http\Controllers\areacontroller;
 use App\Http\Controllers\ComerController;
+use App\Http\Controllers\ExirecomController;
 use App\Http\Controllers\FoodController;
 use App\Http\Controllers\InviteController;
 use App\Http\Controllers\OpenScheduleController;
@@ -42,6 +44,8 @@ Route::get('/convidados/c', [InviteController::class, 'create'])->name('convidad
 Route::post('/convidados/c', [InviteController::class, 'store'])->name('convidados.store');
 Route::get('/convidados/lista/{id}',[InviteController::class,'show'])->name('convidados.show');
 Route::delete('/convidados/{id}',[InviteController::class, 'destroy'])->name('convidados.destroy');
+
+Route::get('/recomendacao' ,[ExirecomController::class, 'index'])->name('recomendacao.index');
 
 Route::get('/admin_menu', [AdminController::class, 'index'])->name('admin.index')->middleware('admin');
 
@@ -101,6 +105,8 @@ Route::middleware(['auth'])->group(function ()
         Route::get('/aniver_menu', [AniverController::class, 'index'])->name('aniver.index');
         Route::get('/aniver/a', [AniverController::class, 'create'])->name('aniver.create');
         Route::post('/aniver/a' ,[AniverController::class, 'store'])->name('aniver.store');
+
+        Route::get('/areafesta', [areacontroller::class, 'index'])->name('area.index');
     });
 
 });

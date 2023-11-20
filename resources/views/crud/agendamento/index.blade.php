@@ -18,6 +18,7 @@
                <td>
                    <a href="{{route('tempo.show', $open_schedule->id)}}">Ver</a>
                    <a href="{{route('tempo.edit', $open_schedule->id)}}">Editar</a>
+            
        
    
            </tr>

@@ -19,7 +19,7 @@
     <main>
         <div id="imgprincipal">
             <img src="{{ URL::asset('images/wagerlogo.png') }}" alt="IMG">
-            <h1>Você está logado como Aniversariante!</h1>
+            <h1>Você está logado como Aniversariante!</h1>exit
         </div>
     </main>
 
