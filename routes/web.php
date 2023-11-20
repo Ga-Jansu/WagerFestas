@@ -61,31 +61,31 @@ Route::middleware(['auth'])->group(function ()
         //Route::get('/admin_menu', [AdminController::class, 'index'])->name('admin.index');
 
 
-        Route::get('/admin/comida', [FoodController::class, 'index'])->name('admin.comida');
+        Route::get('/admin/comida', [FoodController::class, 'index'])->name('admin.comida')->middleware('admin');
         
-        Route::get('/admin/comida/c', [FoodController::class, 'create'])->name('comida.create');
-        Route::post('/admin/comida/c', [FoodController::class, 'store'])->name('comida.store');
-        Route::get('/admin/comida/{id}',[FoodController::class,'show'])->name('comida.show');
-        Route::get('/admin/comida/{id}/edit',[FoodController::class,'edit'])->name('comida.edit');
-        Route::put('/admin/comida/{id}',[FoodController::class, 'update'])->name('comida.update');
-        Route::delete('/admin/comida/{id}',[FoodController::class, 'destroy'])->name('comida.destroy');
+        Route::get('/admin/comida/c', [FoodController::class, 'create'])->name('comida.create')->middleware('admin');
+        Route::post('/admin/comida/c', [FoodController::class, 'store'])->name('comida.store')->middleware('admin');
+        Route::get('/admin/comida/{id}',[FoodController::class,'show'])->name('comida.show')->middleware('admin');
+        Route::get('/admin/comida/{id}/edit',[FoodController::class,'edit'])->name('comida.edit')->middleware('admin');
+        Route::put('/admin/comida/{id}',[FoodController::class, 'update'])->name('comida.update')->middleware('admin');
+        Route::delete('/admin/comida/{id}',[FoodController::class, 'destroy'])->name('comida.destroy')->middleware('admin');
 
-        Route::get('/admin/recomendacao' ,[RecommendationController::class, 'index'])->name('admin.recomendacao');
-        Route::get('/admin/recomendacao/c' ,[RecommendationController::class, 'create'])->name('recomendacao.create');
-        Route::post('/admin/recomendacao/c' ,[RecommendationController::class, 'store'])->name('recomendacao.store');
-        Route::get('/admin/recomendacao/{id}' ,[RecommendationController::class,'show'])->name('recomendacao.show');
-        Route::get('/admin/recomendacao/{id}/edit',[RecommendationController::class,'edit'])->name('recomendacao.edit');
-        Route::put('/admin/recomendacao/{id}' ,[RecommendationController::class,'update'])->name('recomendacao.update');
-        Route::delete('/admin/recomendacao/{id}' ,[RecommendationController::class,'destroy'])->name('recomendacao.destroy');
+        Route::get('/admin/recomendacao' ,[RecommendationController::class, 'index'])->name('admin.recomendacao')->middleware('admin');
+        Route::get('/admin/recomendacao/c' ,[RecommendationController::class, 'create'])->name('recomendacao.create')->middleware('admin');
+        Route::post('/admin/recomendacao/c' ,[RecommendationController::class, 'store'])->name('recomendacao.store')->middleware('admin');
+        Route::get('/admin/recomendacao/{id}' ,[RecommendationController::class,'show'])->name('recomendacao.show')->middleware('admin');
+        Route::get('/admin/recomendacao/{id}/edit',[RecommendationController::class,'edit'])->name('recomendacao.edit')->middleware('admin');
+        Route::put('/admin/recomendacao/{id}' ,[RecommendationController::class,'update'])->name('recomendacao.update')->middleware('admin');
+        Route::delete('/admin/recomendacao/{id}' ,[RecommendationController::class,'destroy'])->name('recomendacao.destroy')->middleware('admin');
 
 
-        Route::get('/admin/horario' ,[OpenScheduleController::class, 'index'])->name('tempo.index');
-        Route::get('/admin/horario/c' ,[OpenScheduleController::class, 'create'])->name('tempo.create');
-        Route::post('/admin/horario/c' ,[OpenScheduleController::class, 'store'])->name('tempo.store');
-        Route::get('/admin/horario/{id}' ,[OpenScheduleController::class,'show'])->name('tempo.show');
-        Route::get('/admin/horario/{id}/edit',[OpenScheduleController::class,'edit'])->name('tempo.edit');
-        Route::put('/admin/horario/{id}' ,[OpenScheduleController::class,'update'])->name('tempo.update');
-        Route::delete('/admin/horario/{id}' ,[OpenScheduleController::class,'destroy'])->name('tempo.destroy');
+        Route::get('/admin/horario' ,[OpenScheduleController::class, 'index'])->name('tempo.index')->middleware('admin');
+        Route::get('/admin/horario/c' ,[OpenScheduleController::class, 'create'])->name('tempo.create')->middleware('admin');
+        Route::post('/admin/horario/c' ,[OpenScheduleController::class, 'store'])->name('tempo.store')->middleware('admin');
+        Route::get('/admin/horario/{id}' ,[OpenScheduleController::class,'show'])->name('tempo.show')->middleware('admin');
+        Route::get('/admin/horario/{id}/edit',[OpenScheduleController::class,'edit'])->name('tempo.edit')->middleware('admin');
+        Route::put('/admin/horario/{id}' ,[OpenScheduleController::class,'update'])->name('tempo.update')->middleware('admin');
+        Route::delete('/admin/horario/{id}' ,[OpenScheduleController::class,'destroy'])->name('tempo.destroy')->middleware('admin');
 
     });
     
