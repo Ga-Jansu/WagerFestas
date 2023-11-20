@@ -12,8 +12,9 @@ use Illuminate\Support\Facades\Auth;
 class AniverController extends Controller
 {
     public function index()
-    {
-        return view('login/aniver_menu');
+    {   
+        $booking = Booking::all();
+        return view('login/aniver_menu',compact('booking'));
     }
 
     public function create(Booking  $booking)
@@ -34,7 +35,6 @@ class AniverController extends Controller
 
         $selectedFoodId = $request->input('food_id');
         $food = food::find($selectedFoodId);
-
         
         $dado = $request->only(['name_birthdayperson','years_birthdayperson','qnt_invited']);
         $dado['user_id'] = $userId;
@@ -43,6 +43,8 @@ class AniverController extends Controller
         
         $booking->openSchedule()->associate($selectedSchedule);
         $booking->food()->associate($food);
+       
+        
         
         $booking->fill($dado);
         $booking->save();

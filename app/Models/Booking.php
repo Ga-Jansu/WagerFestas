@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Open_schedule;
 use App\Models\food;
+use App\Models\invite;
 
 class Booking extends Model
 {
@@ -31,6 +32,11 @@ class Booking extends Model
     public function food()
     {
         return $this->belongsTo(food::class,'food_id');
+    }
+
+    public function invites()
+    {
+        return $this->hasMany(Invite::class);
     }
 
 }

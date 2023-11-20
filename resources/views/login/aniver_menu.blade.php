@@ -15,9 +15,22 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <h1 class="text-4xl font-bold text-center text-black pt-6 mb-2">Você está logado como Aniversariante!</h1>
                 <div class="p-6 bg-white border-b border-gray-200">
-                    <a href="/areafesta" class="text-white hover:underline bg-blue-500 text-white px-4 py-2 rounded-full mb-4 flex justify-center items-center mx-auto">Área da festa</a>
-                    <a href="/recomendacao" class="text-white hover:underline bg-blue-500 text-white px-4 py-2 rounded-full mb-4 flex justify-center items-center mx-auto">Recomendações</a>
-                    <a href="/admin/horario" class="text-white hover:underline bg-blue-500 text-white px-4 py-2 rounded-full mb-4 flex justify-center items-center mx-auto">Agendamentos</a>
+                    <a href="/aniver/agendar" class="text-white hover:underline bg-blue-500 text-white px-4 py-2 rounded-full mb-4 flex justify-center items-center mx-auto">Agendamentos</a>
+                    <h2>Status da reserva:</h2>
+                        @foreach ($booking as $data)
+                            <br> <tr> <td>Aniversario do {{$data->name_birthdayperson}}</td> -----  Status: <td>{{$data->status}}</td> </tr>
+                        @endforeach
+                    <br>
+                    <br>
+                    <br>
+                    <h3>Área da festa:</h3>
+                        @foreach ($booking as $dado)
+                            @if($dado->status == 'aprovado')
+                                <tr>  <td>{{$data->name_birthdayperson}}</td> <a href="{{route('area.index', ['id' => $dado->id])}}" class="text-black">Festa</a>   </tr>
+                            @endif
+                        @endforeach
+
+
                 </div>
             </div>
         </div>

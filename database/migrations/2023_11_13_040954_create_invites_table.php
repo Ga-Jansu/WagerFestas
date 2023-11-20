@@ -16,6 +16,9 @@ return new class extends Migration
             $table->string('name');
             $table->bigInteger('document')->length(11);
             $table->integer('Age');
+            $table->foreignId('bookings_id')->constrained(
+                table: 'bookings', indexName: 'invites_bookings_id'
+            );
             $table->timestamps();
         });
     }
