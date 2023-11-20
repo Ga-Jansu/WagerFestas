@@ -94,11 +94,11 @@ Route::middleware(['auth'])->group(function ()
     });
     
     Route::middleware(['comer'])->group(function () {
-        Route::get('/comer_menu', [ComerController::class, 'index'])->name('comer.index');
+        Route::get('/comer_menu', [ComerController::class, 'index'])->name('comer.index')->middleware('comer');
     });
 
     Route::middleware(['ops'])->group(function () {
-        Route::get('/ops_menu', [OpsController::class, 'index'])->name('ops.index');
+        Route::get('/ops_menu', [OpsController::class, 'index'])->name('ops.index')->middleware('ops');
     });
 
     Route::middleware(['aniver'])->group(function () {

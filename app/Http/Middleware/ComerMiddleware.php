@@ -11,11 +11,17 @@ class ComerMiddleware
 {
     public function handle(Request $request, Closure $next): Response
     {
-        if (auth()->user()->status == 1)
-        {
-            return $next($request);
+
+        if(Auth::check()){
+            if (Auth()->user()->status == 1) {
+                return $next($request);
+            } else{
+                return redirect('/dashboard')->with('status', 'Acesso bloqueado! Você não é Comercial!');
+            }
+        } else{
+            return redirect('/login')->with('status', 'Por favor cadastre-se primeiro!');
         }
         
-        abort(403);
+        //abort(403);
     }
 }
