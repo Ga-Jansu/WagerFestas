@@ -6,11 +6,11 @@
         <th></th>
     </thead>
     <tbody>
-        @foreach($bookings as $booking)
+        @foreach($booking as $bookings)
            <tr>
-               <td>{{$booking->name_birthdayperson}}</td>
+               <td>{{$bookings->name_birthdayperson}}</td>
                <td>
-                   <a href="{{dd(route('solicitacao.show', $booking->id))}}">Detalhes</a>         
+                   <a href="{{route('solicitacao.show', $bookings->id)}}">Detalhes</a>         
            </tr>
        @endforeach
        </tbody>

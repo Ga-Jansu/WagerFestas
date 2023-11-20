@@ -10,15 +10,15 @@
     <br/>
 </ul>
 
-<form action="{{route('solicitacao/destroy', $bookings->id)}}" method="post">
+<form action="{{route('solicitacao.destroy', $bookings->id)}}" method="post">
     @csrf 
     @method('DELETE')
     <button type="submit">Negar</button>
 </form>
-<form action="{{route('solicitacao/aprovar', $bookings->id)}}" method="get">
+<form action="{{route('solicitacao.approve', $bookings->id)}}" method="get">
     <button type="submit">Aprovar</button>
 </form>
 
-<form action="{{route('solicitacao/index')}}" method="get">
+<form action="{{route('solicitacao.index')}}" method="get">
     <button type="submit">Inicio</button>
 </form>

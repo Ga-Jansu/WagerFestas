@@ -17,6 +17,7 @@ class Booking extends Model
         'years_birthdayperson',
         'qnt_invited',
         'date',
+        'status',
         'open_shedule_id',
         'food_id',
         'user_id'

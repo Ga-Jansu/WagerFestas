@@ -95,7 +95,7 @@ Route::middleware(['auth'])->group(function ()
         Route::get('/admin/solicitacao',[SolicitationController::class,'index'])->name('solicitacao.index')->middleware('admin');
         Route::get('/admin/solicitacao/{id}',[SolicitationController::class,'show'])->name('solicitacao.show')->middleware('admin');
         Route::delete('/admin/solicitacao/{id}',[SolicitationController::class,'destroy'])->name('solicitacao.destroy')->middleware('admin');
-        Route::get('/admin/solicitacao/{id}',[SolicitationController::class,'approve'])->name('solicitacao.approve')->middleware('admin');
+        Route::get('/admin/solicitacao/{id}/approved',[SolicitationController::class,'approve'])->name('solicitacao.approve')->middleware('admin');
     });
     
     Route::middleware(['comer'])->group(function () {
