@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Booking;
 
 class invite extends Model
 {
@@ -14,4 +15,5 @@ class invite extends Model
         'document',
         'age'
     ];
+    
 }

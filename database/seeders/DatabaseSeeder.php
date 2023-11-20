@@ -40,5 +40,14 @@ class DatabaseSeeder extends Seeder
             'password' => '$2y$10$02cvnCSgIVjaG2Y5lMZzOuRYdXWF9bhSVAwSF64imk43kRol0slNy', // password
             'remember_token' => Str::random(10),
         ]);
+
+        User::factory()->create([
+            'name' => 'Test',
+            'email' => 'test@email.com',
+            'email_verified_at' => now(),
+            "status" => "0",
+            'password' => '$2y$10$Lqx9GaopkQhASVpYcBSAKuLikB0O3l4DwRT5C5cSatTX0vURV.mE6', // password
+            'remember_token' => Str::random(10),
+        ]);
     }
 }
