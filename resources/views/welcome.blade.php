@@ -17,9 +17,7 @@
             <li><a href="/logar">Entrar</a></li>
         </ul>
     </header>
-
     
-
     <main>
         <div id="imgprincipal">
             <img src="{{ URL::asset('images/wagerlogo.png') }}" alt="Imagem de capa">

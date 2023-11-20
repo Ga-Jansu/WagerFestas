@@ -45,7 +45,7 @@ Route::post('/convidados/c', [InviteController::class, 'store'])->name('convidad
 Route::get('/convidados/lista/{id}',[InviteController::class,'show'])->name('convidados.show');
 Route::delete('/convidados/{id}',[InviteController::class, 'destroy'])->name('convidados.destroy');
 
-Route::get('/recomendacao' ,[ExirecomController::class, 'index'])->name('recomendacao.index');
+Route::get('/recomendacao' ,[ExirecomController::class, 'index'])->name('recomendacao.index')->middleware('aniver');
 
 Route::get('/admin_menu', [AdminController::class, 'index'])->name('admin.index')->middleware('admin');
 
@@ -102,11 +102,11 @@ Route::middleware(['auth'])->group(function ()
     });
 
     Route::middleware(['aniver'])->group(function () {
-        Route::get('/aniver_menu', [AniverController::class, 'index'])->name('aniver.index');
-        Route::get('/aniver/a', [AniverController::class, 'create'])->name('aniver.create');
-        Route::post('/aniver/a' ,[AniverController::class, 'store'])->name('aniver.store');
+        Route::get('/aniver_menu', [AniverController::class, 'index'])->name('aniver.index')->middleware('aniver');
+        Route::get('/aniver/a', [AniverController::class, 'create'])->name('aniver.create')->middleware('aniver');
+        Route::post('/aniver/a' ,[AniverController::class, 'store'])->name('aniver.store')->middleware('aniver');
 
-        Route::get('/areafesta', [areacontroller::class, 'index'])->name('area.index');
+        Route::get('/areafesta', [areacontroller::class, 'index'])->name('area.index')->middleware('aniver');
     });
 
 });
