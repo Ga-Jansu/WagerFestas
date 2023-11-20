@@ -69,3 +69,13 @@ npm run dev
 
 Acessar o projeto
 [http://localhost:8989](http://localhost:8989)
+
+Link do Trello
+```sh
+https://trello.com/invite/b/VqBAU7pK/ATTIfc0fc25d7fba422f3633d09e2b8fdc38C698D897/wager-festas
+```
+
+Link do Figma
+```sh
+https://www.figma.com/file/rr1B8cGZGHDVx6dedulOcX/Wager-Festas?type=design&node-id=0%3A1&mode=design&t=xclucvTXYbvaCZ4B-1
+```
