@@ -63,6 +63,14 @@ Rodar o node
 npm run dev
 ```
 
+Para realizar os testes:
+```sh
+Usuario de teste: test@email.com  senha: 12345678
+Usuario Admin: admin@wagerfestas.com    senha: Admin12345678
+Usuario Comercial: comer@wagerfestas.com    senha: Comer12345678
+Usuario Operacional: ops@wagerfestas.com    senha: Ops12345678
+```
+
 Acessar o projeto
 [http://localhost:8989](http://localhost:8989)
 
