@@ -55,6 +55,11 @@ Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit')
 Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
 Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
+Route::get('/convidado/{id}', [InviteController::class, 'index'])->name('convidados.index');
+Route::get('/convidado/adicionar/{id}', [InviteController::class, 'create'])->name('convidados.create');
+Route::post('/convidado/adicionar/{id}', [InviteController::class, 'store'])->name('convidados.store');
+Route::get('/convidado/lista/{id}',[InviteController::class,'show'])->name('convidados.show');
+Route::delete('/convidado/{id}',[InviteController::class, 'destroy'])->name('convidados.destroy');
 
 Route::middleware(['auth'])->group(function () 
 {
@@ -113,12 +118,6 @@ Route::middleware(['auth'])->group(function ()
         Route::get('/areafesta/show',[Areacontroller::class, 'show'])->name('area.show')->middleware('aniver');
         Route::get('/areafesta/destroy',[Areacontroller::class, 'destroy'])->name('area.destroy')->middleware('aniver');
     });
-
-    Route::get('/convidado/{id}', [InviteController::class, 'index'])->name('convidados.index');
-    Route::get('/convidado/adicionar/{id}', [InviteController::class, 'create'])->name('convidados.create');
-    Route::post('/convidado/adicionar/{id}', [InviteController::class, 'store'])->name('convidados.store');
-    Route::get('/convidado/lista/{id}',[InviteController::class,'show'])->name('convidados.show');
-    Route::delete('/convidado/{id}',[InviteController::class, 'destroy'])->name('convidados.destroy');
 
 });
 

@@ -14,6 +14,11 @@
         <div class="max-w-5xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <h1 class="text-4xl font-bold text-center text-black pt-6 mb-2">Você está logado como Comercial!</h1>
+                <div class="p-6 bg-white border-b border-gray-200">
+                    <a href="/comercial/comida" class="text-white hover:underline bg-blue-500 text-white px-4 py-2 rounded-full mb-4 flex justify-center items-center mx-auto">Cardápios</a>
+                    <a href="/comercial/recomendacao" class="text-white hover:underline bg-blue-500 text-white px-4 py-2 rounded-full mb-4 flex justify-center items-center mx-auto">Recomendações</a>
+                    <a href="/comercial/horario" class="text-white hover:underline bg-blue-500 text-white px-4 py-2 rounded-full mb-4 flex justify-center items-center mx-auto">Agendamentos</a>
+                </div>
             </div>
         </div>
     </div>

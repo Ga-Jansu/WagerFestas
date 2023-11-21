@@ -40,7 +40,6 @@
                         @endforeach
                         </tbody>
                     </table>
-                    <a href="{{ route('comida.create')}}">Adicionar comidas</a>
                     <div class="text-center mt-4">
                         <a href="{{ route('comida.create')}}" class="bg-blue-500 text-white px-4 py-2 rounded-full text-lg">Adicionar comidas</a>
                     </div>

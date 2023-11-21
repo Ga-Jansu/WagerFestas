@@ -28,9 +28,7 @@
                     </div>
                     <div class="mb-4 w-full">
                         <label for="drink" class="block text-gray-700 text-sm font-bold mb-2">Bebidas</label>
-                        <textarea name="drink" id="drink"
-                            class="form-textarea resize-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                            cols="30" rows="10" placeholder="Bebidas"></textarea>
+                        <textarea name="drink" id="drink" class="form-textarea resize-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" cols="30" rows="10" placeholder="Bebidas"></textarea>
                     </div>
                     <div class="mb-4 w-full">
                         <label for="money" class="block text-gray-700 text-sm font-bold mb-2">Preço</label>

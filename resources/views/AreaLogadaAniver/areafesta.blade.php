@@ -19,16 +19,20 @@
                     {{-- <a href="{{route('areafesta.convidado',$bookings->id)}}" class="text-white hover:underline bg-blue-500 text-white px-4 py-2 rounded-full mb-4 flex justify-center items-center mx-auto">Criar Convidados</a>
                     <a href="{{route('areafesta.show',$bookings->id)}}" class="text-white hover:underline bg-blue-500 text-white px-4 py-2 rounded-full mb-4 flex justify-center items-center mx-auto">Convidados confirmados</a>--}}
                     <a href="/recomendacao" class="text-white hover:underline bg-blue-500 text-white px-4 py-2 rounded-full mb-4 flex justify-center items-center mx-auto">Recomendações da festa</a>
-                        <li>
-                            <label for="food_{{ $bookings->id }}">
-                                <strong>{{$foodName}}</strong>
-                                {{$foodBody}}
-                                {{$foodDrink}}
-                                R${{$foodMoney}} por pessoa
-                            </label>
-                        </li>
-                        <br>
-                        <a href="{{route('aniver.index', ['id' => $bookings->id])}}" class="text-white hover:underline bg-red-600 text-white px-3 py-1 rounded-full mb-4 flex justify-center items-center mx-auto">Cancelar Reserva</a>
+                    <br>
+                    <li>
+                        <label for="food_{{ $bookings->id }}">
+                            <strong>{{$foodName}}</strong>
+                            {{$foodBody}}
+                            {{$foodDrink}}
+                            R${{$foodMoney}} por pessoa
+                        </label>
+                    </li>
+                    <br>
+                    <div class="text-center mt-4">
+                        <a href="{{route('aniver.index', ['id' => $bookings->id])}}" class="text-white hover:underline bg-red-600 text-white px-4 py-2 rounded-full mb-4 flex justify-center items-center mx-auto">Cancelar Reserva</a>
+                    </div>
+                        
                 </div>
             </div>
         </div>
