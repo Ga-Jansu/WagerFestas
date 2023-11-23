@@ -27,7 +27,7 @@ class InviteController extends Controller
         $invite->create($data);
         return view('/convidados/confirma');
 }
-    public function show(Invite $invite , string|int $id)
+    public function show(string|int $id)
     {
         if(!$invite = Invite::find($id)){
         return back();
